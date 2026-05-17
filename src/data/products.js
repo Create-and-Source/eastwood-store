@@ -14,7 +14,6 @@ export const products = [
       '/lifestyle/gang-hoodie.png',
     ],
     featured: true,
-    badge: 'Best Seller',
   },
   {
     id: 'cowboy-pillows-crop',
