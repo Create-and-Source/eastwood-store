@@ -173,6 +173,8 @@
   align-items: flex-end;
 }
 
+.hero-text {}
+
 .hero-media {
   position: absolute;
   inset: 0;
@@ -1400,19 +1402,21 @@
   .header-inner { padding: 14px 16px; }
   .header-logo-text { font-size: 18px; }
 
-  .hero { align-items: flex-start; }
+  .hero {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
   .hero-inner {
-    padding: 140px 24px 0;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 120px 24px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .hero-cta {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: space-between;
   }
   .hero-title { font-size: clamp(48px, 15vw, 80px); }
   .hero-sub { font-size: 12px; }

@@ -375,9 +375,11 @@ function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="hero-title">EASTWOOD</h1>
-          <div className="hero-sub">co. supply</div>
-          <div className="hero-tagline">Michigan to Miami</div>
+          <div className="hero-text">
+            <h1 className="hero-title">EASTWOOD</h1>
+            <div className="hero-sub">co. supply</div>
+            <div className="hero-tagline">Michigan to Miami</div>
+          </div>
           <Link to="/shop" className="hero-cta">
             Shop Now <ArrowRight size={14} />
           </Link>
