@@ -188,9 +188,7 @@ function Footer() {
         <div>
           <span className="footer-logo">EASTWOOD</span>
           <p className="footer-tagline">co. supply</p>
-          <p className="footer-desc">
-            Michigan to Miami. This ain't our first rodeo. Western-inspired apparel for the wild at heart.
-          </p>
+          <p className="footer-desc">Michigan to Miami.</p>
         </div>
         <div className="footer-col">
           <h4>Shop</h4>
@@ -349,77 +347,20 @@ function HomePage() {
       {/* TICKER */}
       <Ticker />
 
-      {/* MARQUEE */}
-      <Marquee>
-        <span className="filled">EASTWOOD</span> <span className="star-sep">&#9733;</span> <span className="accent">CO. SUPPLY</span> <span className="star-sep">&#9733;</span> <span>MICHIGAN TO MIAMI</span> <span className="star-sep">&#9733;</span>
-      </Marquee>
-
-      {/* INTRO */}
-      <motion.section
-        className="intro"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="intro-label">The Brand</div>
-        <h2 className="intro-headline">This Ain't My First Rodeo</h2>
-        <p className="intro-body">
-          Born from the grit of Michigan and the heat of Miami. Eastwood Co. Supply is western-inspired apparel for the ones who ride their own way — raised rowdy, raised right, and built to stand out.
-        </p>
-      </motion.section>
-
-      {/* SPREAD — Cowboy Pillows */}
-      <section className="spread">
-        <div className="spread-img">
-          <img src="/lifestyle/cowboy-pillows-camp2.png" alt="Cowboy Pillows" loading="lazy" />
-        </div>
-        <motion.div
-          className="spread-text"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="spread-label">Fan Favorite</div>
-          <h2 className="spread-title">Cowboy Pillows</h2>
-          <p className="spread-body">
-            The one that started it all. Bold red on black. Available in crop tees, hoodies, and the full set. If you know, you know.
-          </p>
-          <Link to="/product/cowboy-pillows-crop" className="spread-link">
-            Shop Cowboy Pillows <ArrowRight size={14} />
-          </Link>
-        </motion.div>
-      </section>
-
-      {/* PULLQUOTE */}
-      <motion.section
-        className="pullquote"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <p className="pullquote-text">
-          "Raised rowdy. Raised right. Wild with a cause — <em>born to stand out.</em>"
-        </p>
-      </motion.section>
-
-      {/* PRODUCTS CAROUSEL */}
+      {/* ALL PRODUCTS */}
       <section className="products-section">
         <div className="products-header">
-          <h2 className="products-title">The Collection</h2>
+          <h2 className="products-title">Shop</h2>
           <Link to="/shop" className="products-link">
             View All <ArrowRight size={14} />
           </Link>
         </div>
-        <ProductCarousel products={featured} />
+        <div className="home-grid">
+          {products.map((p, i) => (
+            <ProductCard key={p.id} product={p} index={i} />
+          ))}
+        </div>
       </section>
-
-      {/* MARQUEE 2 */}
-      <Marquee>
-        <span className="accent">WILD AS HELL</span> <span className="star-sep">&#9733;</span> <span className="filled">EASTWOOD GANG</span> <span className="star-sep">&#9733;</span> <span>HOWDY PARTNER</span> <span className="star-sep">&#9733;</span>
-      </Marquee>
 
       {/* PHOTO GRID */}
       <div className="photo-grid">
@@ -443,29 +384,6 @@ function HomePage() {
         </div>
       </div>
 
-      {/* SPREAD — Wild Women */}
-      <section className="spread spread-reverse">
-        <motion.div
-          className="spread-text"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="spread-label">For The Girls</div>
-          <h2 className="spread-title">Long Live Wild Women</h2>
-          <p className="spread-body">
-            Crop tanks and fitted tees for the ones who ride hard and look good doing it. Rodeo-ready, bar-approved.
-          </p>
-          <Link to="/product/long-live-wild-women-tank" className="spread-link">
-            Shop Wild Women <ArrowRight size={14} />
-          </Link>
-        </motion.div>
-        <div className="spread-img">
-          <img src="/lifestyle/cowboy-tank-rodeo3.png" alt="Wild women rodeo" loading="lazy" />
-        </div>
-      </section>
-
       {/* NEWSLETTER */}
       <section className="newsletter">
         <motion.div
@@ -474,9 +392,8 @@ function HomePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="newsletter-label">Join The Gang</div>
           <h3 className="newsletter-title">Get First Dibs</h3>
-          <p className="newsletter-sub">New drops, exclusive designs, and early access. No spam — just good stuff.</p>
+          <p className="newsletter-sub">New drops and early access.</p>
           <form className="newsletter-form" onSubmit={e => e.preventDefault()}>
             <input type="email" placeholder="Your email" />
             <button type="submit">Subscribe</button>
@@ -627,7 +544,7 @@ function CollectionsPage() {
       <div className="shop-header">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="shop-title">Collections</h1>
-          <p style={{ fontSize: 15, color: 'var(--gray)', marginTop: 12 }}>Curated drops. Each one tells a story.</p>
+          <p style={{ fontSize: 15, color: 'var(--gray)', marginTop: 12 }}>Curated drops.</p>
         </motion.div>
       </div>
 
@@ -678,44 +595,29 @@ function AboutPage() {
         </motion.div>
       </div>
 
-      <motion.section
-        className="intro"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        style={{ paddingTop: 60 }}
-      >
-        <p className="intro-body">
-          Eastwood Co. Supply was built on a simple idea: you can take the cowboy out of the country, but you can't take the country out of the cowboy. From the barns of Michigan to the beaches of Miami, this brand carries the spirit of the ride.
-        </p>
-        <p className="intro-body" style={{ marginTop: 24 }}>
-          Every design tells a story. The rodeo dust. The open road. The Saturday nights and Sunday mornings. We make apparel for people who live loud, ride hard, and never apologize for who they are.
-        </p>
-        <p className="intro-body" style={{ marginTop: 24 }}>
-          Heavyweight cotton. Premium prints. Built to last — because the journey doesn't end after one wear. Raised rowdy, raised right, and always standing out.
-        </p>
-      </motion.section>
-
-      <div className="pullquote">
-        <p className="pullquote-text">
-          "This ain't just apparel. It's a way of life. Born in the saddle, built for the road. <em>Michigan to Miami.</em>"
-        </p>
-      </div>
-
-      <section className="spread">
-        <div className="spread-img">
-          <img src="/lifestyle/cowboy-tank-rodeo2.png" alt="Eastwood lifestyle" loading="lazy" />
-        </div>
-        <div className="spread-text" style={{ alignItems: 'center', textAlign: 'center' }}>
-          <span className="about-logo-display">EASTWOOD</span>
-          <p className="about-logo-sub">co. supply</p>
-          <p style={{ fontSize: 15, color: 'var(--gray)', lineHeight: 1.8, marginTop: 16 }}>Michigan to Miami. This Ain't My First Rodeo.</p>
-          <div style={{ marginTop: 24 }}>
-            <a href="https://tiktok.com/@eastwood0100" target="_blank" rel="noopener noreferrer" className="spread-link">
-              Follow @eastwood0100 <ArrowRight size={14} />
-            </a>
+      <section className="about-content">
+        <div className="about-split">
+          <div className="about-img">
+            <img src="/lifestyle/cowboy-tank-rodeo2.png" alt="Eastwood lifestyle" loading="lazy" />
           </div>
+          <motion.div
+            className="about-info"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="about-logo-display">EASTWOOD</span>
+            <p className="about-logo-sub">co. supply</p>
+            <p style={{ fontSize: 15, color: 'var(--gray)', lineHeight: 1.8, marginTop: 24 }}>
+              Western-inspired apparel from the barns of Michigan to the beaches of Miami. Raised rowdy, raised right.
+            </p>
+            <div style={{ marginTop: 24 }}>
+              <a href="https://tiktok.com/@eastwood0100" target="_blank" rel="noopener noreferrer" className="spread-link">
+                Follow @eastwood0100 <ArrowRight size={14} />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
