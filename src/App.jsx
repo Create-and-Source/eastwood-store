@@ -316,7 +316,68 @@ function ProductCarousel({ products: items }) {
 
 /* ═══ PAGES ═══ */
 
+function StoryImage({ src, alt, text, sub }) {
+  return (
+    <div className="story-image">
+      <img src={src} alt={alt} loading="lazy" />
+      <div className="story-image-overlay">
+        {text && <h2 className="story-image-text">{text}</h2>}
+        {sub && <p className="story-image-sub">{sub}</p>}
+      </div>
+    </div>
+  );
+}
+
+function StorySpread({ image, label, title, body, flip }) {
+  return (
+    <motion.div
+      className={`story-spread ${flip ? 'flip' : ''}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="story-spread-img">
+        <img src={image} alt={title} loading="lazy" />
+      </div>
+      <div className="story-spread-text">
+        <span className="story-spread-label">{label}</span>
+        <h3 className="story-spread-title">{title}</h3>
+        <p className="story-spread-body">{body}</p>
+        <Link to="/shop" className="story-spread-link">
+          Shop Now <ArrowRight size={14} />
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
+
+function ProductRow({ title, items }) {
+  return (
+    <section className="product-row">
+      {title && (
+        <div className="product-row-header">
+          <h2 className="product-row-title">{title}</h2>
+          <Link to="/shop" className="product-row-link">View All <ArrowRight size={12} /></Link>
+        </div>
+      )}
+      <div className="product-row-grid" style={{ '--cols': Math.min(items.length, 4) }}>
+        {items.map((p, i) => (
+          <ProductCard key={p.id} product={p} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function HomePage() {
+  const featured = products.filter(p => p.featured && p.badge);
+  const hoodies = products.filter(p => p.category === 'hoodies');
+  const tops = products.filter(p => p.category === 'tops');
+  const crewnecks = products.filter(p => p.category === 'crewnecks');
+  const tees = products.filter(p => p.category === 'tees');
+  const rest = products.filter(p => p.category === 'bottoms' || p.category === 'sets');
+
   return (
     <>
       <div className="grain" />
@@ -346,13 +407,77 @@ function HomePage() {
 
       <Ticker />
 
-      {/* ALL PRODUCTS */}
-      <section className="home-shop">
-        <div className="home-shop-grid">
-          {products.map((p, i) => (
-            <ProductCard key={p.id} product={p} index={i} />
-          ))}
-        </div>
+      {/* BEST SELLERS */}
+      <ProductRow title="Best Sellers" items={featured} />
+
+      {/* STORY: RAISED ROWDY */}
+      <StoryImage
+        src="/lifestyle/cowboy-tank-rodeo2.png"
+        alt="Rodeo"
+        text="Raised Rowdy, Raised Right"
+        sub="Western roots. Miami energy."
+      />
+
+      {/* HOODIES */}
+      <ProductRow title="Hoodies" items={hoodies} />
+
+      {/* STORY: MICHIGAN TO MIAMI */}
+      <StorySpread
+        image="/lifestyle/gang-hoodie.png"
+        label="The Story"
+        title="Michigan to Miami"
+        body="Born in the barns and backroads of Michigan. Raised on rodeos, bonfires, and Friday night football. Now we're bringing that same grit to the palm trees and neon of South Beach."
+      />
+
+      {/* TOPS & TANKS */}
+      <ProductRow title="Tops & Tanks" items={tops} />
+
+      {/* STORY: COWBOY PILLOWS */}
+      <StoryImage
+        src="/lifestyle/cowboy-pillows-camp2.png"
+        alt="Desert camp"
+        text="Cowboy Pillows"
+        sub="The one everybody's talking about."
+      />
+
+      {/* CREWNECKS */}
+      <ProductRow title="Crewnecks" items={crewnecks} />
+
+      {/* STORY: FOR THE GIRLS */}
+      <StorySpread
+        image="/lifestyle/wild-women-horses.png"
+        label="For The Girls"
+        title="Long Live Wild Women"
+        body="Born to stand out. Wild with a cause. This collection is for the girls who ride hard, love harder, and never apologize for either."
+        flip
+      />
+
+      {/* TEES + BOTTOMS */}
+      <ProductRow title="Tees" items={tees} />
+      <ProductRow title="Bottoms & Sets" items={rest} />
+
+      {/* PHOTO MOSAIC */}
+      <div className="mosaic">
+        <div className="mosaic-item"><img src="/lifestyle/cowboy-pillows-camp3.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item tall"><img src="/lifestyle/cowboy-tank-picnic.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item"><img src="/lifestyle/eastwood-sweats-cream.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item"><img src="/lifestyle/somebodys-problem-crew.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item"><img src="/lifestyle/cowboy-tank-rodeo3.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item tall"><img src="/lifestyle/howdy-partner-miami.png" alt="" loading="lazy" /></div>
+      </div>
+
+      {/* FOLLOW CTA */}
+      <section className="follow-cta">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="follow-cta-label">Follow The Journey</span>
+          <a href="https://tiktok.com/@eastwood0100" target="_blank" rel="noopener noreferrer" className="follow-cta-handle">
+            @eastwood0100
+          </a>
+        </motion.div>
       </section>
 
       {/* NEWSLETTER */}
