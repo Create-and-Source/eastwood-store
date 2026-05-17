@@ -388,7 +388,7 @@ function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-media">
-          <img src="/lifestyle/gang-hoodie-miami-night.png" alt="" />
+          <video src="/lifestyle/hero-video.mp4" autoPlay muted loop playsInline />
           <div className="hero-gradient" />
         </div>
         <motion.div
