@@ -116,6 +116,7 @@ export const products = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     images: [
       '/lifestyle/howdy-partner-miami.png',
+      '/lifestyle/howdy-partner-field.png',
     ],
     featured: true,
   },
