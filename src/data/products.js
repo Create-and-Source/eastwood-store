@@ -9,8 +9,10 @@ export const products = [
       { name: 'Cream', hex: '#EDE5D0' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/gang-hoodie-miami-night.png',
-    designImage: '/designs/eastwood-gang.png',
+    images: [
+      '/lifestyle/gang-hoodie-miami-night.png',
+      '/lifestyle/gang-hoodie.png',
+    ],
     featured: true,
     badge: 'Best Seller',
   },
@@ -24,8 +26,12 @@ export const products = [
       { name: 'Black', hex: '#0A0A0A' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/cowboy-pillows-camp1.png',
-    designImage: '/designs/cowboy-pillows-text.png',
+    images: [
+      '/lifestyle/cowboy-pillows-camp1.png',
+      '/lifestyle/cowboy-pillows-camp2.png',
+      '/lifestyle/cowboy-pillows-camp3.png',
+      '/lifestyle/cowboy-pillows-camp4.png',
+    ],
     featured: true,
     badge: 'Hot',
   },
@@ -39,8 +45,10 @@ export const products = [
       { name: 'Cream', hex: '#EDE5D0' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/eastwood-hoodie-bar.png',
-    designImage: '/lifestyle/cowgirl-hoodie-back.png',
+    images: [
+      '/lifestyle/cowgirl-hoodie-back.png',
+      '/lifestyle/eastwood-hoodie-bar.png',
+    ],
     featured: true,
   },
   {
@@ -54,8 +62,10 @@ export const products = [
       { name: 'Heather Gray', hex: '#B8B8B8' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/somebodys-problem-bar.jpeg',
-    designImage: '/designs/somebodys-problem.png',
+    images: [
+      '/lifestyle/somebodys-problem-bar.jpeg',
+      '/lifestyle/somebodys-problem-crew.png',
+    ],
     featured: true,
   },
   {
@@ -69,8 +79,13 @@ export const products = [
       { name: 'Heather Gray', hex: '#B8B8B8' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/cowboy-tank-fair.png',
-    designImage: '/designs/american-cowboy.png',
+    images: [
+      '/lifestyle/cowboy-tank-fair.png',
+      '/lifestyle/cowboy-tank-picnic.png',
+      '/lifestyle/cowboy-tank-rodeo1.png',
+      '/lifestyle/cowboy-tank-rodeo2.png',
+      '/lifestyle/cowboy-tank-rodeo3.png',
+    ],
     featured: true,
   },
   {
@@ -83,8 +98,9 @@ export const products = [
       { name: 'White', hex: '#F5F5F0' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/wild-women-horses.png',
-    designImage: '/designs/long-live-wild-women.png',
+    images: [
+      '/lifestyle/wild-women-horses.png',
+    ],
     featured: true,
   },
   {
@@ -97,8 +113,9 @@ export const products = [
       { name: 'Black', hex: '#0A0A0A' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/howdy-partner-miami.png',
-    designImage: '/designs/howdy-partner.png',
+    images: [
+      '/lifestyle/howdy-partner-miami.png',
+    ],
     featured: true,
   },
   {
@@ -111,8 +128,9 @@ export const products = [
       { name: 'White', hex: '#F5F5F0' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/eastwood-crest-ocean-dr.jpeg',
-    designImage: '/designs/eastwood-crest.png',
+    images: [
+      '/lifestyle/eastwood-crest-ocean-dr.jpeg',
+    ],
     featured: false,
   },
   {
@@ -125,8 +143,9 @@ export const products = [
       { name: 'Heather Gray', hex: '#B8B8B8' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/hold-my-revolver-range.png',
-    designImage: '/designs/hold-my-revolver.png',
+    images: [
+      '/lifestyle/hold-my-revolver-range.png',
+    ],
     featured: false,
     badge: 'New',
   },
@@ -141,8 +160,9 @@ export const products = [
       { name: 'Black', hex: '#0A0A0A' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/tractor-tee.png',
-    designImage: '/designs/vintage-tractor.png',
+    images: [
+      '/lifestyle/tractor-tee.png',
+    ],
     featured: false,
   },
   {
@@ -157,8 +177,12 @@ export const products = [
       { name: 'Black', hex: '#0A0A0A' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/eastwood-sweats-convertible.png',
-    designImage: null,
+    images: [
+      '/lifestyle/eastwood-sweats-convertible.png',
+      '/lifestyle/eastwood-sweats-cream.png',
+      '/lifestyle/eastwood-sweats-bar.png',
+      '/lifestyle/eastwood-sweats-black.png',
+    ],
     featured: false,
   },
   {
@@ -172,8 +196,9 @@ export const products = [
       { name: 'Black', hex: '#0A0A0A' },
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    image: '/lifestyle/eastwood-sweats-black.png',
-    designImage: null,
+    images: [
+      '/lifestyle/eastwood-sweats-black.png',
+    ],
     featured: false,
   },
 ];

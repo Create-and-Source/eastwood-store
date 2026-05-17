@@ -153,7 +153,7 @@ function CartDrawer() {
             <div className="cart-items">
               {cart.map(item => (
                 <div key={item.key} className="cart-item">
-                  <img className="cart-item-img" src={item.product.image} alt={item.product.name} />
+                  <img className="cart-item-img" src={item.product.images[0]} alt={item.product.name} />
                   <div className="cart-item-info">
                     <div className="cart-item-name">{item.product.name}</div>
                     <div className="cart-item-variant">{item.color} / {item.size}</div>
@@ -233,7 +233,7 @@ function ProductCard({ product, index }) {
       <div className="product-card-img-wrap">
         <img
           className="product-card-img"
-          src={product.image}
+          src={product.images[0]}
           alt={product.name}
           loading="lazy"
         />
@@ -508,6 +508,7 @@ function ProductPage() {
   const product = products.find(p => p.id === id);
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [activeImage, setActiveImage] = useState(0);
   const { addToCart } = useCart();
 
   if (!product) return <div style={{ padding: '200px 40px', textAlign: 'center', color: 'var(--gray)' }}>Product not found</div>;
@@ -522,7 +523,20 @@ function ProductPage() {
       <div className="grain" />
       <div className="pdp-layout">
         <div className="pdp-gallery">
-          <img className="pdp-gallery-img" src={product.image} alt={product.name} />
+          <img className="pdp-gallery-img" src={product.images[activeImage]} alt={product.name} />
+          {product.images.length > 1 && (
+            <div className="pdp-thumbs">
+              {product.images.map((img, i) => (
+                <button
+                  key={i}
+                  className={`pdp-thumb ${i === activeImage ? 'active' : ''}`}
+                  onClick={() => setActiveImage(i)}
+                >
+                  <img src={img} alt={`${product.name} ${i + 1}`} />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <motion.div
