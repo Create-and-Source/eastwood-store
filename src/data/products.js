@@ -34,13 +34,13 @@ export const products = [
     name: 'Cowgirl Fancy Hoodie',
     price: 72,
     category: 'hoodies',
-    description: 'Steel blue cowgirl illustration on cream pullover hoodie. "Eastwood 100 co.supply" vintage print. Front and back detail.',
+    description: '"EASTWOOD" wordmark on front, steel blue cowgirl illustration on back. "Eastwood 100 co.supply" vintage print. Cream heavyweight pullover.',
     colors: [
       { name: 'Cream', hex: '#EDE5D0' },
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/cowgirl-hoodie-back.png',
-    designImage: '/designs/cowgirl-fancy.png',
+    image: '/lifestyle/eastwood-hoodie-bar.png',
+    designImage: '/lifestyle/cowgirl-hoodie-back.png',
     featured: true,
   },
   {
@@ -143,21 +143,6 @@ export const products = [
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     image: '/lifestyle/tractor-tee.png',
     designImage: '/designs/vintage-tractor.png',
-    featured: false,
-  },
-  {
-    id: 'eastwood-wordmark-hoodie',
-    name: 'Eastwood Wordmark Hoodie',
-    price: 68,
-    category: 'hoodies',
-    description: '"EASTWOOD" western wordmark in steel blue. Premium heavyweight cream pullover hoodie.',
-    colors: [
-      { name: 'Cream', hex: '#EDE5D0' },
-      { name: 'Black', hex: '#0A0A0A' },
-    ],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    image: '/lifestyle/eastwood-hoodie-bar.png',
-    designImage: '/designs/eastwood-wordmark.png',
     featured: false,
   },
   {

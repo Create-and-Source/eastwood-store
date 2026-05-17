@@ -506,7 +506,6 @@ function ProductPage() {
   const product = products.find(p => p.id === id);
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [showDesign, setShowDesign] = useState(false);
   const { addToCart } = useCart();
 
   if (!product) return <div style={{ padding: '200px 40px', textAlign: 'center', color: 'var(--gray)' }}>Product not found</div>;
@@ -516,20 +515,12 @@ function ProductPage() {
     addToCart(product, product.colors[selectedColor].name, selectedSize);
   };
 
-  const displayImage = showDesign && product.designImage ? product.designImage : product.image;
-
   return (
     <div className="pdp">
       <div className="grain" />
       <div className="pdp-layout">
         <div className="pdp-gallery">
-          <img className="pdp-gallery-img" src={displayImage} alt={product.name} />
-          {product.designImage && product.designImage !== product.image && (
-            <div className="pdp-image-toggle">
-              <button className={!showDesign ? 'active' : ''} onClick={() => setShowDesign(false)}>Lifestyle</button>
-              <button className={showDesign ? 'active' : ''} onClick={() => setShowDesign(true)}>Design</button>
-            </div>
-          )}
+          <img className="pdp-gallery-img" src={product.image} alt={product.name} />
         </div>
 
         <motion.div
