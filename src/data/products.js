@@ -185,7 +185,8 @@ export const products = [
       '/lifestyle/eastwood-sweats-bar.png',
       '/lifestyle/eastwood-sweats-black.png',
     ],
-    featured: false,
+    featured: true,
+    badge: 'Fan Favorite',
   },
   {
     id: 'cowboy-pillows-set',

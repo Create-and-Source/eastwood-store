@@ -371,7 +371,10 @@ function ProductRow({ title, items }) {
 }
 
 function HomePage() {
-  const featured = products.filter(p => p.featured && p.badge);
+  const featured = [
+    products.find(p => p.id === 'eastwood-sweats'),
+    ...products.filter(p => p.featured && p.badge && p.id !== 'eastwood-sweats'),
+  ];
   const hoodies = products.filter(p => p.category === 'hoodies');
   const tops = products.filter(p => p.category === 'tops');
   const crewnecks = products.filter(p => p.category === 'crewnecks');
