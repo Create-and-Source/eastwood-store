@@ -316,49 +316,7 @@ function ProductCarousel({ products: items }) {
 
 /* ═══ PAGES ═══ */
 
-function ProductSection({ title, items }) {
-  return (
-    <section className="products-section">
-      <div className="products-header">
-        <h2 className="products-title">{title}</h2>
-      </div>
-      <div className="home-grid">
-        {items.map((p, i) => (
-          <ProductCard key={p.id} product={p} index={i} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FullBleedImage({ src, alt }) {
-  return (
-    <div className="full-bleed">
-      <img src={src} alt={alt} loading="lazy" />
-    </div>
-  );
-}
-
-function DualImage({ left, right, leftAlt, rightAlt }) {
-  return (
-    <div className="dual-image">
-      <div className="dual-image-item">
-        <img src={left} alt={leftAlt} loading="lazy" />
-      </div>
-      <div className="dual-image-item">
-        <img src={right} alt={rightAlt} loading="lazy" />
-      </div>
-    </div>
-  );
-}
-
 function HomePage() {
-  const hoodies = products.filter(p => p.category === 'hoodies');
-  const tops = products.filter(p => p.category === 'tops');
-  const crewnecks = products.filter(p => p.category === 'crewnecks');
-  const tees = products.filter(p => p.category === 'tees');
-  const bottoms = products.filter(p => p.category === 'bottoms' || p.category === 'sets');
-
   return (
     <>
       <div className="grain" />
@@ -388,66 +346,14 @@ function HomePage() {
 
       <Ticker />
 
-      {/* HOODIES */}
-      <ProductSection title="Hoodies" items={hoodies} />
-
-      {/* LIFESTYLE BREAK */}
-      <DualImage
-        left="/lifestyle/cowgirl-hoodie-back.png" leftAlt="Cowgirl hoodie"
-        right="/lifestyle/eastwood-hoodie-bar.png" rightAlt="Wordmark hoodie"
-      />
-
-      {/* TOPS & TANKS */}
-      <ProductSection title="Tops & Tanks" items={tops} />
-
-      {/* LIFESTYLE BREAK */}
-      <FullBleedImage src="/lifestyle/pool-caps.png" alt="Eastwood poolside" />
-
-      {/* CREWNECKS */}
-      <ProductSection title="Crewnecks" items={crewnecks} />
-
-      {/* LIFESTYLE BREAK */}
-      <DualImage
-        left="/lifestyle/somebodys-problem-crew.png" leftAlt="Somebody's Problem"
-        right="/lifestyle/cowboy-tank-picnic.png" rightAlt="Beach picnic"
-      />
-
-      {/* TEES */}
-      <ProductSection title="Tees" items={tees} />
-
-      {/* LIFESTYLE BREAK */}
-      <FullBleedImage src="/lifestyle/cowboy-tank-rodeo2.png" alt="Rodeo" />
-
-      {/* BOTTOMS & SETS */}
-      <ProductSection title="Bottoms & Sets" items={bottoms} />
-
-      {/* LIFESTYLE BREAK */}
-      <DualImage
-        left="/lifestyle/eastwood-sweats-bar.png" leftAlt="Sweats at the bar"
-        right="/lifestyle/miami-walk.png" rightAlt="Miami"
-      />
-
-      {/* PHOTO GRID */}
-      <div className="photo-grid">
-        <div className="photo-grid-item tall">
-          <img src="/lifestyle/gang-hoodie.png" alt="Eastwood Gang" loading="lazy" />
+      {/* ALL PRODUCTS */}
+      <section className="home-shop">
+        <div className="home-shop-grid">
+          {products.map((p, i) => (
+            <ProductCard key={p.id} product={p} index={i} />
+          ))}
         </div>
-        <div className="photo-grid-item">
-          <img src="/lifestyle/cowboy-pillows-camp3.png" alt="Desert camp" loading="lazy" />
-        </div>
-        <div className="photo-grid-item">
-          <img src="/lifestyle/wild-women-horses.png" alt="Wild women" loading="lazy" />
-        </div>
-        <div className="photo-grid-item">
-          <img src="/lifestyle/cowboy-tank-rodeo3.png" alt="Rodeo" loading="lazy" />
-        </div>
-        <div className="photo-grid-item tall">
-          <img src="/lifestyle/cowboy-tank-picnic.png" alt="Beach picnic" loading="lazy" />
-        </div>
-        <div className="photo-grid-item">
-          <img src="/lifestyle/tractor-tee.png" alt="Tractor" loading="lazy" />
-        </div>
-      </div>
+      </section>
 
       {/* NEWSLETTER */}
       <section className="newsletter">
