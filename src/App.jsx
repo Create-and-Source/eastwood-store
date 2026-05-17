@@ -316,8 +316,48 @@ function ProductCarousel({ products: items }) {
 
 /* ═══ PAGES ═══ */
 
+function ProductSection({ title, items }) {
+  return (
+    <section className="products-section">
+      <div className="products-header">
+        <h2 className="products-title">{title}</h2>
+      </div>
+      <div className="home-grid">
+        {items.map((p, i) => (
+          <ProductCard key={p.id} product={p} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FullBleedImage({ src, alt }) {
+  return (
+    <div className="full-bleed">
+      <img src={src} alt={alt} loading="lazy" />
+    </div>
+  );
+}
+
+function DualImage({ left, right, leftAlt, rightAlt }) {
+  return (
+    <div className="dual-image">
+      <div className="dual-image-item">
+        <img src={left} alt={leftAlt} loading="lazy" />
+      </div>
+      <div className="dual-image-item">
+        <img src={right} alt={rightAlt} loading="lazy" />
+      </div>
+    </div>
+  );
+}
+
 function HomePage() {
-  const featured = products.filter(p => p.featured);
+  const hoodies = products.filter(p => p.category === 'hoodies');
+  const tops = products.filter(p => p.category === 'tops');
+  const crewnecks = products.filter(p => p.category === 'crewnecks');
+  const tees = products.filter(p => p.category === 'tees');
+  const bottoms = products.filter(p => p.category === 'bottoms' || p.category === 'sets');
 
   return (
     <>
@@ -344,23 +384,46 @@ function HomePage() {
         </motion.div>
       </section>
 
-      {/* TICKER */}
       <Ticker />
 
-      {/* ALL PRODUCTS */}
-      <section className="products-section">
-        <div className="products-header">
-          <h2 className="products-title">Shop</h2>
-          <Link to="/shop" className="products-link">
-            View All <ArrowRight size={14} />
-          </Link>
-        </div>
-        <div className="home-grid">
-          {products.map((p, i) => (
-            <ProductCard key={p.id} product={p} index={i} />
-          ))}
-        </div>
-      </section>
+      {/* HOODIES */}
+      <ProductSection title="Hoodies" items={hoodies} />
+
+      {/* LIFESTYLE BREAK */}
+      <DualImage
+        left="/lifestyle/cowgirl-hoodie-back.png" leftAlt="Cowgirl hoodie"
+        right="/lifestyle/eastwood-hoodie-bar.png" rightAlt="Wordmark hoodie"
+      />
+
+      {/* TOPS & TANKS */}
+      <ProductSection title="Tops & Tanks" items={tops} />
+
+      {/* LIFESTYLE BREAK */}
+      <FullBleedImage src="/lifestyle/pool-caps.png" alt="Eastwood poolside" />
+
+      {/* CREWNECKS */}
+      <ProductSection title="Crewnecks" items={crewnecks} />
+
+      {/* LIFESTYLE BREAK */}
+      <DualImage
+        left="/lifestyle/somebodys-problem-crew.png" leftAlt="Somebody's Problem"
+        right="/lifestyle/cowboy-tank-picnic.png" rightAlt="Beach picnic"
+      />
+
+      {/* TEES */}
+      <ProductSection title="Tees" items={tees} />
+
+      {/* LIFESTYLE BREAK */}
+      <FullBleedImage src="/lifestyle/cowboy-tank-rodeo2.png" alt="Rodeo" />
+
+      {/* BOTTOMS & SETS */}
+      <ProductSection title="Bottoms & Sets" items={bottoms} />
+
+      {/* LIFESTYLE BREAK */}
+      <DualImage
+        left="/lifestyle/eastwood-sweats-bar.png" leftAlt="Sweats at the bar"
+        right="/lifestyle/miami-walk.png" rightAlt="Miami"
+      />
 
       {/* PHOTO GRID */}
       <div className="photo-grid">
@@ -368,19 +431,19 @@ function HomePage() {
           <img src="/lifestyle/gang-hoodie.png" alt="Eastwood Gang" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/pool-caps.png" alt="Poolside" loading="lazy" />
-        </div>
-        <div className="photo-grid-item">
           <img src="/lifestyle/cowboy-pillows-camp3.png" alt="Desert camp" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/miami-walk.png" alt="Miami" loading="lazy" />
+          <img src="/lifestyle/wild-women-horses.png" alt="Wild women" loading="lazy" />
+        </div>
+        <div className="photo-grid-item">
+          <img src="/lifestyle/cowboy-tank-rodeo3.png" alt="Rodeo" loading="lazy" />
         </div>
         <div className="photo-grid-item tall">
           <img src="/lifestyle/cowboy-tank-picnic.png" alt="Beach picnic" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/eastwood-sweats-bar.png" alt="Sweats" loading="lazy" />
+          <img src="/lifestyle/tractor-tee.png" alt="Tractor" loading="lazy" />
         </div>
       </div>
 
