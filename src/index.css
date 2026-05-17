@@ -1,0 +1,41 @@
+:root {
+  --bg: #0A0A08;
+  --bg-raised: #12120F;
+  --bg-card: #1A1A16;
+  --blue: #7B9EC4;
+  --blue-dim: #4A6A8A;
+  --red: #C44536;
+  --red-dim: #8B2E22;
+  --cream: #EDE5D0;
+  --cream-dim: #C4B99A;
+  --white: #F0EDE6;
+  --gray: #7A7668;
+  --gray-dim: #2E2D28;
+  --gray-faint: #1E1D1A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+img { max-width: 100%; display: block; }
+
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
