@@ -326,7 +326,7 @@ function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-media">
-          <img src="/lifestyle/gang-hoodie.png" alt="" />
+          <img src="/lifestyle/gang-hoodie-miami-night.png" alt="" />
           <div className="hero-gradient" />
         </div>
         <motion.div
@@ -365,22 +365,22 @@ function HomePage() {
       {/* PHOTO GRID */}
       <div className="photo-grid">
         <div className="photo-grid-item tall">
-          <img src="/lifestyle/cowboy-tank-rodeo2.png" alt="Rodeo style" loading="lazy" />
+          <img src="/lifestyle/gang-hoodie.png" alt="Eastwood Gang" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/cowgirl-hoodie-back.png" alt="Cowgirl hoodie" loading="lazy" />
+          <img src="/lifestyle/pool-caps.png" alt="Poolside" loading="lazy" />
         </div>
         <div className="photo-grid-item">
           <img src="/lifestyle/cowboy-pillows-camp3.png" alt="Desert camp" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/eastwood-hoodie-bar.png" alt="Eastwood hoodie" loading="lazy" />
+          <img src="/lifestyle/miami-walk.png" alt="Miami" loading="lazy" />
         </div>
         <div className="photo-grid-item tall">
-          <img src="/lifestyle/wild-women-horses.png" alt="Wild women" loading="lazy" />
+          <img src="/lifestyle/cowboy-tank-picnic.png" alt="Beach picnic" loading="lazy" />
         </div>
         <div className="photo-grid-item">
-          <img src="/lifestyle/tractor-tee.png" alt="Tractor tee" loading="lazy" />
+          <img src="/lifestyle/eastwood-sweats-bar.png" alt="Sweats" loading="lazy" />
         </div>
       </div>
 
