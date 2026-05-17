@@ -415,8 +415,8 @@ function HomePage() {
 
       {/* STORY: RAISED ROWDY */}
       <StoryImage
-        src="/lifestyle/cowboy-tank-rodeo2.png"
-        alt="Rodeo"
+        src="/lifestyle/cowboy-tank-picnic.png"
+        alt="Beach picnic"
         text="Raised Rowdy, Raised Right"
         sub="Western roots. Miami energy."
       />
@@ -462,7 +462,7 @@ function HomePage() {
       {/* PHOTO MOSAIC */}
       <div className="mosaic">
         <div className="mosaic-item"><img src="/lifestyle/cowboy-pillows-camp3.png" alt="" loading="lazy" /></div>
-        <div className="mosaic-item tall"><img src="/lifestyle/cowboy-tank-picnic.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item tall"><img src="/lifestyle/cowboy-tank-rodeo2.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/eastwood-sweats-cream.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/somebodys-problem-crew.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/cowboy-tank-rodeo3.png" alt="" loading="lazy" /></div>
