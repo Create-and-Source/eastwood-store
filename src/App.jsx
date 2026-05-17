@@ -415,8 +415,8 @@ function HomePage() {
 
       {/* STORY: RAISED ROWDY */}
       <StoryImage
-        src="/lifestyle/cowboy-tank-picnic.png"
-        alt="Beach picnic"
+        src="/lifestyle/cowboy-tank-rodeo2.png"
+        alt="Rodeo"
         text="Raised Rowdy, Raised Right"
         sub="Western roots. Miami energy."
       />
@@ -426,7 +426,7 @@ function HomePage() {
 
       {/* STORY: MICHIGAN TO MIAMI */}
       <StorySpread
-        image="/lifestyle/gang-hoodie.png"
+        image="/lifestyle/cowboy-tank-picnic.png"
         label="The Story"
         title="Michigan to Miami"
         body="Born in the barns and backroads of Michigan. Raised on rodeos, bonfires, and Friday night football. Now we're bringing that same grit to the palm trees and neon of South Beach."
@@ -462,7 +462,7 @@ function HomePage() {
       {/* PHOTO MOSAIC */}
       <div className="mosaic">
         <div className="mosaic-item"><img src="/lifestyle/cowboy-pillows-camp3.png" alt="" loading="lazy" /></div>
-        <div className="mosaic-item tall"><img src="/lifestyle/cowboy-tank-rodeo2.png" alt="" loading="lazy" /></div>
+        <div className="mosaic-item tall"><img src="/lifestyle/gang-hoodie.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/eastwood-sweats-cream.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/somebodys-problem-crew.png" alt="" loading="lazy" /></div>
         <div className="mosaic-item"><img src="/lifestyle/cowboy-tank-rodeo3.png" alt="" loading="lazy" /></div>
