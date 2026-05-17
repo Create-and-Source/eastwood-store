@@ -99,6 +99,7 @@ export const products = [
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     images: [
+      '/lifestyle/wild-women-barn.png',
       '/lifestyle/wild-women-horses.png',
     ],
     featured: true,

@@ -445,7 +445,7 @@ function HomePage() {
 
       {/* STORY: FOR THE GIRLS */}
       <StorySpread
-        image="/lifestyle/wild-women-horses.png"
+        image="/lifestyle/wild-women-barn.png"
         label="For The Girls"
         title="Long Live Wild Women"
         body="Born to stand out. Wild with a cause. This collection is for the girls who ride hard, love harder, and never apologize for either."
